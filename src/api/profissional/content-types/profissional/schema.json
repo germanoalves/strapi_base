@@ -1,0 +1,61 @@
+{
+  "kind": "collectionType",
+  "collectionName": "profissionals",
+  "info": {
+    "singularName": "profissional",
+    "pluralName": "profissionals",
+    "displayName": "Profissional",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "nome": {
+      "type": "string"
+    },
+    "categoria": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::categoria.categoria",
+      "inversedBy": "profissionals"
+    },
+    "users_permissions_user": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "profissionals"
+    },
+    "favorito": {
+      "type": "boolean",
+      "default": false
+    },
+    "tel": {
+      "type": "string"
+    },
+    "bio": {
+      "type": "text"
+    },
+    "fb": {
+      "type": "string",
+      "default": "off"
+    },
+    "ig": {
+      "type": "string",
+      "default": "off"
+    },
+    "dt_hr_agendamentos": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::dt-hr-agendamento.dt-hr-agendamento",
+      "mappedBy": "profissionals"
+    },
+    "schedulings": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::scheduling.scheduling",
+      "inversedBy": "profissionals"
+    }
+  }
+}

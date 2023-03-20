@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_cathorarios_horarios",
+  "info": {
+    "displayName": "Horários",
+    "icon": "clock",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "datagendamento": {
+      "type": "date"
+    },
+    "horaagendamento": {
+      "type": "time"
+    },
+    "status_horario": {
+      "type": "boolean",
+      "default": true
+    }
+  }
+}

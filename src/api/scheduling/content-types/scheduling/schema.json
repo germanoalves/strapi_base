@@ -1,0 +1,46 @@
+{
+  "kind": "collectionType",
+  "collectionName": "schedulings",
+  "info": {
+    "singularName": "scheduling",
+    "pluralName": "schedulings",
+    "displayName": "Scheduling",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "pacients": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::pacient.pacient",
+      "mappedBy": "schedulings"
+    },
+    "profissionals": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::profissional.profissional",
+      "inversedBy": "schedulings"
+    },
+    "status_agendamento": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::status-agendamento.status-agendamento",
+      "inversedBy": "schedulings"
+    },
+    "users_permissions_user": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "schedulings"
+    },
+    "dt_hr_agendamentos": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::dt-hr-agendamento.dt-hr-agendamento",
+      "mappedBy": "schedulings"
+    }
+  }
+}

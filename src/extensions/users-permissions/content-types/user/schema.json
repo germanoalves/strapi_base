@@ -1,0 +1,103 @@
+{
+  "kind": "collectionType",
+  "collectionName": "up_users",
+  "info": {
+    "name": "user",
+    "description": "",
+    "singularName": "user",
+    "pluralName": "users",
+    "displayName": "User"
+  },
+  "options": {
+    "draftAndPublish": false,
+    "timestamps": true
+  },
+  "attributes": {
+    "username": {
+      "type": "string",
+      "minLength": 3,
+      "unique": true,
+      "configurable": false,
+      "required": true
+    },
+    "email": {
+      "type": "email",
+      "minLength": 6,
+      "configurable": false,
+      "required": true
+    },
+    "provider": {
+      "type": "string",
+      "configurable": false
+    },
+    "password": {
+      "type": "password",
+      "minLength": 6,
+      "configurable": false,
+      "private": true
+    },
+    "resetPasswordToken": {
+      "type": "string",
+      "configurable": false,
+      "private": true
+    },
+    "confirmationToken": {
+      "type": "string",
+      "configurable": false,
+      "private": true
+    },
+    "confirmed": {
+      "type": "boolean",
+      "default": false,
+      "configurable": false
+    },
+    "blocked": {
+      "type": "boolean",
+      "default": false,
+      "configurable": false
+    },
+    "role": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.role",
+      "inversedBy": "users",
+      "configurable": false
+    },
+    "schedulings": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::scheduling.scheduling",
+      "mappedBy": "users_permissions_user"
+    },
+    "categorias": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::categoria.categoria",
+      "mappedBy": "users_permissions_user"
+    },
+    "profissionals": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::profissional.profissional",
+      "mappedBy": "users_permissions_user"
+    },
+    "pacients": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::pacient.pacient",
+      "mappedBy": "users_permissions_user"
+    },
+    "dt_hr_agendame_criadorntos": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::dt-hr-agendamento.dt-hr-agendamento",
+      "mappedBy": "users_permissions_user"
+    },
+    "contas": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::conta.conta",
+      "mappedBy": "users_permissions_user"
+    }
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "collectionName": "components_especialidade_especialidades",
+  "info": {
+    "displayName": "Especialidade",
+    "icon": "file-medical",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "nome_especialidade": {
+      "type": "string"
+    }
+  }
+}

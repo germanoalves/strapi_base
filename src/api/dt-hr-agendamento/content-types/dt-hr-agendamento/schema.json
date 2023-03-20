@@ -1,0 +1,39 @@
+{
+  "kind": "collectionType",
+  "collectionName": "dt_hr_agendamentos",
+  "info": {
+    "singularName": "dt-hr-agendamento",
+    "pluralName": "dt-hr-agendamentos",
+    "displayName": "DtHr Agendamento",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "users_permissions_user": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "dt_hr_agendame_criadorntos"
+    },
+    "componentedatahora": {
+      "type": "component",
+      "repeatable": true,
+      "component": "cathorarios.horarios"
+    },
+    "schedulings": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::scheduling.scheduling",
+      "inversedBy": "dt_hr_agendamentos"
+    },
+    "profissionals": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::profissional.profissional",
+      "inversedBy": "dt_hr_agendamentos"
+    }
+  }
+}

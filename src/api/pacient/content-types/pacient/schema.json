@@ -1,0 +1,43 @@
+{
+  "kind": "collectionType",
+  "collectionName": "pacients",
+  "info": {
+    "singularName": "pacient",
+    "pluralName": "pacients",
+    "displayName": "pacient",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "email": {
+      "type": "email"
+    },
+    "address": {
+      "type": "text"
+    },
+    "phone": {
+      "type": "string"
+    },
+    "password": {
+      "type": "password"
+    },
+    "users_permissions_user": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "pacients"
+    },
+    "schedulings": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::scheduling.scheduling",
+      "inversedBy": "pacients"
+    }
+  }
+}
