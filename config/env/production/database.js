@@ -4,11 +4,11 @@ module.exports = ({ env }) => ({
     default: {
       connector: 'postgres',
       settings: {
-        host: env('PGHOST', 'containers-us-west-115.railway.app'),
-        port: env('PGPORT', '7684'),
+        host: env('PGHOST', '0.0.0.0'),
+        port: env('PGPORT', '6668'),
         database: env('PGDATABASE','railway'),
         username: env('PGUSER','postgres'),
-        password: env('dBCPkicLUrEi0jDrev7b','DXKtPyqPPrJvwSzmc37A'),
+        password: env('PGPASSWORD','dBCPkicLUrEi0jDrev7b'),
         ssl: env.bool(false),
       },
       options: {},
