@@ -6,7 +6,7 @@ module.exports = ({ env }) => ({
       secret: env('ADMIN_JWT_SECRET', 'BRT_JWT_SECRET'),
     },
   },
-  url: env('PUBLIC_URL', 'https://strapibase-production.up.railway.app/'),
+  url: env('PUBLIC_URL', 'https://strapibase-production.up.railway.app'),
   cron: {
     enabled: env.bool('CRON_ENABLED', true),
   },
