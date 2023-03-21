@@ -4,7 +4,7 @@ module.exports = ({ env }) => ({
     default: {
       connector: 'postgres',
       settings: {
-        host: env('PGHOST', '0.0.0.0'),
+        host: env('PGHOST', 'containers-us-west-115.railway.app'),
         port: env('PGPORT', '6668'),
         database: env('PGDATABASE','railway'),
         username: env('PGUSER','postgres'),
