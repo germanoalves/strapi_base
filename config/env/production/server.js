@@ -3,7 +3,7 @@ module.exports = ({ env }) => ({
     port: env.int('PORT', 1337),
     admin: {
       auth: {
-        secret: env('ADMIN_JWT_SECRET', 'mysupersecretkey'),
+        secret: env('ADMIN_JWT_SECRET', 'BRT_JWT_SECRET'),
       },
     },
     url: env('PUBLIC_URL', 'https://strapibase-production.up.railway.app/'),
