@@ -19,4 +19,5 @@ module.exports = ({ env }) => ({
         password: env('PROXY_PASSWORD', ''),
       },
     },
+    keys: ['myKeyA', 'myKeyB'], // <--- Adicione essa propriedade
   });
