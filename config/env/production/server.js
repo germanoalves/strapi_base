@@ -1,4 +1,12 @@
 module.exports = ({ env }) => ({
+    security: {
+        // Configurações da política de segurança de conteúdo
+        csp: {
+          directives: {
+            "connect-src": ["'self'", "https:"]
+          }
+        }
+      },
     url: env('https://strapibase-production.up.railway.app'),
 });
 // module.exports = ({ env }) => ({
