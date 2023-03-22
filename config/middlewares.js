@@ -1,34 +1,33 @@
-module.exports = {
-  settings: {
-    cors: {
+module.exports = [
+  {
+    name: 'poweredBy',
+    resolve: 'strapi-middlewares::powered-by',
+    options: {
       enabled: true,
-      origin: ["*"],
-      headers: ["*"],
+      value: 'Strapi <strapi.io>',
     },
   },
-  load: {
-    before: ['cors', 'csrf', 'parser', 'public'],
-    order: [],
-    after: ['router', 'strapi::error', '404'],
-  },
-  settings: {
-    logger: {
+  {
+    name: 'logger',
+    resolve: 'strapi-middlewares::logger',
+    options: {
       level: 'debug',
-      exposeInContext: true,
-      requests: true,
     },
   },
-};
-
-// module.exports = [
-//   'strapi::errors',
-//   'strapi::security',
-//   'strapi::cors',
-//   'strapi::poweredBy',
-//   'strapi::logger',
-//   'strapi::query',
-//   'strapi::body',
-//   'strapi::session',
-//   'strapi::favicon',
-//   'strapi::public',
-// ];
+  'strapi::cors',
+  {
+    name: 'x-frame-options',
+    resolve: 'strapi-middlewares::frameguard',
+    options: {
+      action: 'sameorigin',
+    },
+  },
+  'strapi::security',
+  'strapi::public',
+  'strapi::body',
+  'strapi::session',
+  'strapi::compress',
+  'strapi::poweredBy',
+  'strapi::favicon',
+  'strapi::router',
+];
