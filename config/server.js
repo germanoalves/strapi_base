@@ -12,7 +12,7 @@ module.exports = ({ env }) => ({
   url: env('PUBLIC_URL', 'https://strapibase-production.up.railway.app'),
   admin: {
     auth: {
-      secret: env('ADMIN_JWT_SECRET', 'xxx'),
+      secret: env('ADMIN_JWT_SECRET', 'BRT_JWT_SECRET'),
     },
   },
   app: {
