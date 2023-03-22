@@ -3,22 +3,19 @@ module.exports = [
   'strapi::security',
   'strapi::cors',
   'strapi::poweredBy',
+  {
+    name: 'strapi::cors',
+    config: {
+      enabled: true,
+      headers: '*',
+      origin: ["*"]
+    }
+  },
   'strapi::logger',
   'strapi::query',
   'strapi::body',
   'strapi::session',
   'strapi::favicon',
   'strapi::public',
-  {
-    name: 'strapi::security',
-    config: {
-      contentSecurityPolicy: {
-        useDefaults: true,
-        directives: {
-          'connect-src': ["'self'", 'http:', 'https:'],
-          upgradeInsecureRequests: null,
-        },
-      },
-    },
-  },
+  
 ];
