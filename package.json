@@ -12,7 +12,6 @@
   },
   "dependencies": {
     "@offset-dev/strapi-calendar": "^0.0.10",
-    "@strapi/plugin-graphql": "^4.8.2",
     "@strapi/plugin-i18n": "4.8.2",
     "@strapi/plugin-users-permissions": "4.8.2",
     "@strapi/strapi": "4.8.2",
