@@ -11,6 +11,11 @@ module.exports = ({ env }) => ({
         ssl: env.bool(false),
     },
   },
+  admin: {
+    auth: {
+      secret: env('ADMIN_JWT_SECRET', 'EpZQZGakEg%&sxgq'),
+    },
+  },
 });
 
 // module.exports = ({ env }) => ({

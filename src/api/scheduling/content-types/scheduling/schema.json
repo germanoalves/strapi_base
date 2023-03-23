@@ -22,19 +22,19 @@
       "type": "relation",
       "relation": "manyToMany",
       "target": "api::profissional.profissional",
-      "inversedBy": "schedulings"
+      "mappedBy": "schedulings"
     },
     "status_agendamento": {
       "type": "relation",
       "relation": "manyToOne",
       "target": "api::status-agendamento.status-agendamento",
-      "inversedBy": "schedulings"
+      "mappedBy": "schedulings"
     },
     "users_permissions_user": {
       "type": "relation",
       "relation": "manyToOne",
       "target": "plugin::users-permissions.user",
-      "inversedBy": "schedulings"
+      "mappedBy": "schedulings"
     },
     "dt_hr_agendamentos": {
       "type": "relation",

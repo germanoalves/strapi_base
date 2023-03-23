@@ -16,6 +16,11 @@ module.exports = ({ env }) => ({
       },
       options: {},
     },
+    admin: {
+      auth: {
+        secret: env('ADMIN_JWT_SECRET', 'EpZQZGakEg%&sxgq'),
+      },
+    },
   },
 });
 //  const parse = require('pg-connection-string').parse;
